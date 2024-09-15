@@ -1,4 +1,5 @@
 cont = 0
+
 while cont < 3:
     senha = input("Digite a senha: ")
 
