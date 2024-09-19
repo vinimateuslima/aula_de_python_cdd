@@ -26,7 +26,7 @@ while opcao != 6:
         resultado = n1 * n2
     elif opcao == 4:
         if n2 == 0:
-            print("Não é possível realizar divisão por 0")
+            print("\n !! Não é possível realizar divisão por zero !! \n")
         else:
             resultado = n1 / n2
 
