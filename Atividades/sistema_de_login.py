@@ -1,4 +1,4 @@
-usuario = [""]*5
+usuario = [0]*5
 
 tam = len(usuario)
 
@@ -15,26 +15,14 @@ opcao = int(input("1 - Cadastro \n"
 while opcao != 4:
 
 
-   if opcao == 1:
-        for x in range(tam):
+    if opcao == 1:
+        for i in range(10):
+            print(i)
+            if i == 5:
+                break
 
-            usuario[x] = input("Digite o nome de usuário: ")
-
-            if usuario[x] == '123':
-                print("Nome de usuário '123' não é permitido.")
-                break  # Sai do loop se o nome for '123'
-
-            print("Usuário cadastrado com sucesso!")
-            break  # Sai do loop após cadastrar um usuário
-
-        else:
-            print("Limite de usuários atingido")
-
-
-print("Deseja realizar outra operação? ")
-
-opcao = int(input("1 - Cadastro \n"
-          " 2 - Mostrar \n"
-          " 3 - Login \n"
-          " 4 - Sair \n "
-          "Selecione uma opção: "))
+    opcao = int(input("1 - Cadastro \n"
+              " 2 - Mostrar \n"
+              " 3 - Login \n"
+              " 4 - Sair \n "
+              "Selecione uma opção: "))
