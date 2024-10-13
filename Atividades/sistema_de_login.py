@@ -6,10 +6,11 @@ senha = [""]*tam
 
 opcao = 0
 
-opcao = int(input("1 - Cadastro \n"
+opcao = int(input(" 1 - Cadastro \n"
           " 2 - Mostrar \n"
           " 3 - Login \n"
-          " 4 - Sair \n "
+          " 4 - Sair \n"
+          " 5 - Deletar contas \n "
           "Selecione uma opção: "))
 print()
 while opcao != 4:
@@ -18,11 +19,15 @@ while opcao != 4:
     if opcao == 1:
         for i in range(tam):
             if usuario[i] == "":
-                usuario[i] = input("Digite um usuário: ")
-                senha[i] = input("Digite a senha do usuário: ")
-                print("Cadastro realizado com sucesso!")
-                break
-
+                usuarioNovo = input("Digite um usuário: ")
+                if usuarioNovo not in usuario:
+                    usuario[i] = usuarioNovo
+                    senha[i] = input("Digite a senha do usuário: ")
+                    print("Cadastro realizado com sucesso!")
+                    break
+                else:
+                    print("Usuário ja existe!")
+                    break
         else:
             print()
             print("Limite de usuários excedido!")
@@ -39,6 +44,10 @@ while opcao != 4:
 
         for i in range(tam):
 
+            if usuarioDigitado not in usuario:
+                print("Usuário não encontrado!")
+                break
+
             if  usuarioDigitado == usuario[i] :
                 tentativa = 2
 
@@ -54,7 +63,12 @@ while opcao != 4:
                         tentativa -= 1
                 else:
                     print("Número de tentativas excedidas!")
-                    break
+
+    if opcao == 5:
+            usuario = [""] * 5
+            senha = [""] * 5
+            print("Usuários removidos com sucesso!")
+
 
 
 
@@ -64,10 +78,11 @@ while opcao != 4:
 
     print()
     print("Deseja realizar outra operação?")
-    opcao = int(input("1 - Cadastro \n"
+    opcao = int(input(" 1 - Cadastro \n"
               " 2 - Mostrar \n"
               " 3 - Login \n"
-              " 4 - Sair \n "
+              " 4 - Sair \n"
+              " 5 - Deletar contas \n "
               "Selecione uma opção: "))
 else:
     print("Saindo do programa...")
