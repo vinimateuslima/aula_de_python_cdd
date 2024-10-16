@@ -1,25 +1,24 @@
 from operator import truediv
 
 class Pessoa:
-    def __init__(self, nome, peso, idade, andando=False, comendo=False, dormindo=False):
+    def __init__(self, nome, peso, idade):
         self.nome = nome
         self.peso = peso
         self.idade = idade
-        self.andando = andando
-        self.comendo = comendo
-        self.dormindo = dormindo
+        self.andando = False
+        self.comendo = False
+        self.dormindo = False
 
     def comer(self):
-        if self.comendo==True:
-            print("Ja estou comendo")
-        elif self.andando==True:
-            print("Não posso comer, estou andando")
-        elif self.dormindo==True:
-            print("Não posso comer, estou dormindo")
+        if self.comendo == True:
+            print("Ja estou comendo bobão")
+        elif self.andando == True:
+            print("Não posso comer andando, sou burro")
+        elif self.dormindo == True:
+            print("ZzzzZzzzZzzzz")
         else:
-            print("Vou comer")
+            print("Vou começar a comer")
             self.comendo = True
-
 
 
     def andar(self):
@@ -42,6 +41,7 @@ class Pessoa:
 
     def dormir(self):
         print(f"{self.nome} foi dormir")
+        self.dormindo = True
 
 
 class Animal:
