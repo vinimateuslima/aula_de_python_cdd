@@ -15,7 +15,8 @@ while True:
         case 2:
             imprimirArquivo()
         case 3:
-            pass
+            texto = input("Digite um texto: ")
+            pesquisar(texto)
         case 4:
             print("Encerrando o programa...")
             break
